@@ -32,4 +32,10 @@ class Analyzer_interface(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label_most.setText(f"The least repeated word in the text: None")
 
     def search_word(self):
-        pass
+        text = self.textEdit.toPlainText()
+        search_word = self.lineEdit_search_word.text()
+        words = text.split()
+        word_count = words.count(search_word)
+        self.label.setText(f"'{search_word}' found {word_count} times in the text")
+
+
